@@ -12,10 +12,10 @@ env:
   - secure: OC8rCgVnlRJK1Cy7NycL1SKYhNrSaxxHk/t54ndiQfbGcyXqgI0Ac3hWY5WA5GKoQ1wUtxXaFkALMRqkdd//4Z3svxe1FyRi5B5mo1Pj7FVzDf4TUVc1CEGyFyKkPrBniEh3H834u/tdORn4zaWlfF08qQ99UEXn9DKgl3ixM/v9dYWcKARoARTX+5iTkFtq9tnck2GGC1t2X82XDLSi+vVAMiFUbDtdebXA8Uv+vDTqJ2pYjvUhBPI8cqwdZi0hwuepAvTjXSDBK4+LZ2OeAaX7Y8Uz+MPEzeoTTUFrN9pfYPTTSwa5jYs//hu9JCeG5rR+YmWM1X2lURvSiYVCBnejFydhpB//DADFIzu9ZYW4opnd+1wtgawYIx7ObBgUNx8zUTJdc8b6Jw+ol+zHi1RKALbE7A4gy4lpqHZg55vpCoWpBE1+qBfqpWI3n7nbo3fAcnsqPd9/r/kiyU5MXr0/pv+RhO/eE6BJIdxyZBfDqoAV0SnGgelr1rfA3rvVRfxaoxHD7srcmCrKQT77hACElQf5oK4KJoro7IdfJ0eBpGTbeuvbK3d0Sa1ld4tESjar2nCgqoYJvcAlDlAlGLkr6pEuwxGXtzSQRpxybf/uZpf7Bae9a1c6PVLR0WQ/FVSW4u0Huk96nW8td/H7DmBJKjKdMfBl5n9NGsLImVk=
 script:
 - molecule --debug  create --scenario-name travis
-- molecule converge --scenario-name travis
-- molecule verify --scenario-name travis
+- molecule --debug converge --scenario-name travis
+- molecule --debug verify --scenario-name travis
 after_script:
-- molecule destroy
+- molecule --debug destroy --scenario-name travis
 before_install:
 - openssl aes-256-cbc -K $encrypted_77c68a28addc_key -iv $encrypted_77c68a28addc_iv
   -in secrets.tar.enc -out secrets.tar -d
