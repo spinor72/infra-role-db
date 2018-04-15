@@ -1,8 +1,8 @@
 language: python
 python:
-- '3.6'
+- '2.7'
 install:
-- pip3 install ansible==2.5.0 molecule apache-libcloud
+- pip install ansible==2.5.0 molecule apache-libcloud
 env:
   matrix:
   - GCE_CREDENTIALS_FILE="$(pwd)/credentials.json"
