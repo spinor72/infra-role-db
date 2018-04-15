@@ -2,7 +2,7 @@ language: python
 python:
 - '2.7'
 install:
-- pip install ansible==2.5.0 molecule apache-libcloud paramiko pycrypto
+- pip install ansible==2.5.0 molecule apache-libcloud pycrypto
 env:
   matrix:
   - GCE_CREDENTIALS_FILE="$(pwd)/credentials.json"
